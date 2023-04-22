@@ -1,7 +1,11 @@
 import fastify from 'fastify'
-import { knex } from './database'
+import { transaction } from './routes/transactions'
 
 const app = fastify()
+
+app.register(transaction, {
+  prefix: 'transactions',
+})
 
 app
   .listen({
@@ -10,9 +14,3 @@ app
   .then(() => {
     console.log('Console running on por http://localhost:3333')
   })
-
-app.get('/hello', async () => {
-  const tables = knex('sqlite_schema').select('*')
-
-  return tables
-})
