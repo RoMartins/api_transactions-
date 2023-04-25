@@ -1,5 +1,13 @@
+# Dependencies
 node_modules
+
+# Database
 tmp/app.sqlite
+
+# Environment
 README.md
 .env
 .env.test
+
+# Build
+build
