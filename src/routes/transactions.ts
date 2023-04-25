@@ -4,7 +4,7 @@ import { z } from 'zod'
 import { randomUUID } from 'node:crypto'
 import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 
-export async function transaction(app: FastifyInstance) {
+export async function transactionsRoutes(app: FastifyInstance) {
   app.get(
     '/',
     {
